@@ -1,6 +1,7 @@
 import { Alert, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useContext, useMemo, useRef, useState } from "react";
 import OtpBox from "../component/otpBox";
+import { AuthContext } from "../gloablConstant/context";
 
 const Login = () => {
   const [number, setNumber] = useState("");
@@ -12,13 +13,13 @@ const Login = () => {
   const [otp4, setOtp4] = useState("");
   const [otp5, setOtp5] = useState("");
   const [otp6, setOtp6] = useState("");
-
   const input1 = useRef();
   const input2 = useRef();
   const input3 = useRef();
   const input4 = useRef();
   const input5 = useRef();
   const input6 = useRef();
+  const { signIn} = useContext(AuthContext);
 
   useMemo(()=>{
     if(number.length == 10){
