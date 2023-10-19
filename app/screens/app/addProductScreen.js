@@ -1,12 +1,14 @@
 import { StyleSheet, Text, View,TextInput,Pressable,Alert,ActivityIndicator } from 'react-native'
 import React, { useState } from 'react'
 import InputBox from '../../component/inputBox'
+import { useNavigation } from '@react-navigation/native';
 
 const AddProductScreen = () => {
     const [price,setPrice] = useState('');
     const [productName,setProductName] = useState('');
     const [productDesc,setProductDesc] = useState('');
     const [loader,setLoader] = useState(false);
+    const navigation = useNavigation();
 
     const postData = async () => {
         setLoader(true)
@@ -30,6 +32,8 @@ const AddProductScreen = () => {
           const responseData = await response.json();
           setLoader(false)
           console.log("responseData",JSON.stringify(responseData))
+          const data = JSON.stringify(responseData)
+          navigation.navigate('detailScreen',{data:data})
         } catch (error) {
           console.error('Error:', error);
           setLoader(false)

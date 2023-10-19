@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View,FlatList,Image, Pressable, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
+import { colors } from '../../gloablConstant/colors';
 
 const Home = () => {
     const [listData,setListData] = useState([]);
@@ -50,9 +51,9 @@ const Home = () => {
             renderItem={RenderItem}
             ItemSeparatorComponent={<View style={{height:10}} />}
         />
-         <View style={{ backgroundColor: "gray", padding: 10, marginBottom: 30, margin: 15, borderRadius: 7, flexDirection: "row", alignItems: "center", justifyContent: "space-between",marginBottom:40 }}>
-            <Text style={{fontSize:17,fontWeight:"600",color:"white"}}> Total Items | {listData.length} </Text>
-            <Text style={{fontSize:17,fontWeight:"600",color:"white"}}>Price| {listData.reduce((total, currentItem) => total + currentItem.price, 0).toFixed(2)} </Text>
+         <View style={{ backgroundColor: colors.gray, padding: 10, marginBottom: 30, margin: 15, borderRadius: 7, flexDirection: "row", alignItems: "center", justifyContent: "space-between",marginBottom:40 }}>
+            <Text style={{fontSize:17,fontWeight:"600",color:colors.white}}> Total Items | {listData.length} </Text>
+            <Text style={{fontSize:17,fontWeight:"600",color:colors.white}}>Price| {listData.reduce((total, currentItem) => total + currentItem.price, 0).toFixed(2)} </Text>
                 </View>
     </ScrollView>
   )

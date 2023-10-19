@@ -10,6 +10,7 @@ import { SIGN_IN, SIGN_OUT, TOKEN } from "../gloablConstant/globalValues";
 import Home from "../screens/app/home";
 import MapScreen from "../screens/app/mapScreen";
 import AddProductScreen from "../screens/app/addProductScreen";
+import DetailsPage from "../screens/app/detailsPage";
 
 
 
@@ -61,6 +62,7 @@ const RootNavigtion = () => {
           <HomeStackNavigator.Screen name="homeScreen" component={Home} />
           <HomeStackNavigator.Screen name="MapScreen" component={MapScreen} />
           <HomeStackNavigator.Screen name="addProductScreen" component={AddProductScreen} />
+          <HomeStackNavigator.Screen name="detailScreen" component={DetailsPage} />
         </HomeStackNavigator.Navigator >
       )
     }else{
